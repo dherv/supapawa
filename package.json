@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "pscale:connect": "pscale connect dev initial-setup --port 3309"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
@@ -21,6 +22,8 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "swr": "^1.3.0"
+  },
   "packageManager": "npm@8.5.5"
 }
