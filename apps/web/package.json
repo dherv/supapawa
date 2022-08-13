@@ -8,14 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "prisma:studio": "npx prisma studio",
-    "prisma:push": "npx prisma db push",
-    "pscale:connect": "pscale connect dev initial-setup --port 3309"
+    "prisma:push": "npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^4.1.1",
     "next": "12.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "the-new-css-reset": "^1.7.3",
     "ui": "*"
   },
   "devDependencies": {

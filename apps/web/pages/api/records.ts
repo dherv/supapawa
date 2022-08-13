@@ -11,11 +11,11 @@ export default async function assetHandler(
   switch (method) {
     case "GET":
       try {
-        const stars = await prisma.record.findMany({
+        const records = await prisma.record.findMany({
           where: { userId: 1 },
           include: { user: true },
         });
-        res.status(200).json(stars);
+        res.status(200).json(records);
       } catch (e) {
         console.error("Request error", e);
         res.status(500).json({ error: "Error fetching posts" });
