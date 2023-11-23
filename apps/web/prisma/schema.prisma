@@ -12,13 +12,11 @@ generator client {
 model User {
   id      Int           @id @default(autoincrement())
   email   String        @unique
-  name    String?
-  age     Int
   role    Role          @default(USER)
   profile Profile?
   records Record[]
-  parent  ParentChild[] @relation("parent")
-  child   ParentChild[] @relation("child")
+  parent  ParentChild[] @relation("child")
+  child   ParentChild[] @relation("parent")
 }
 
 model ParentChild {
@@ -31,9 +29,12 @@ model ParentChild {
 }
 
 model Profile {
-  id     Int  @id @default(autoincrement())
-  user   User @relation(fields: [userId], references: [id])
-  userId Int  @unique
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @unique
+  name      String
+  birthdate DateTime @default(now())
+  avatar    String?
 }
 
 enum Role {
